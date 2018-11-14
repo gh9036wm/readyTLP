@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  	<style>
+  		#fancy {
+  			background-color: gray;
+			color:white;
+			
+  		}
+  		.heading {
+  			color: rgb(255, 102, 0);
+  		}
+  	</style>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <title>Getting Started with React</title>
+</head>
+<body>
+	<div id="react-container"></div>
+
+	<script type="text/babel">
+// for function component
+		class Hello extends React.Component{
+			render(){
+				return(
+					<div id="fancy">
+						<h1 className="heading">Using  Property </h1>
+						<h2>Hello {this.props.firstName}</h2>
+						<p>Learning React version {this.props.version}</p>
+					
+					</div>
+				)
+			}
+		}
+// For stateless component
+		//const HelloStateless = (props) => <h1>Hello {props.firstName}</h1>
+		// or we can use this if only one property
+		const HelloStateless = ({firstName}) => <h1>Hello {firstName}</h1>
+	
+		ReactDOM.render(
+			<HelloStateless firstName="James Tran" version = {14} />,
+			document.getElementById('react-container')
+		)
+
+	</script>
+
+</body>
+</html>

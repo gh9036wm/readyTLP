@@ -1,0 +1,20 @@
+package com.in28minutes.springboot;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class WelcomeController {
+	retrieveMessage service = new retrieveMessage();
+	@RequestMapping("/welcome")
+	public String welcome() {
+		return service.welcomeMessage();
+	}
+
+}
+ class retrieveMessage {
+	public String welcomeMessage() {
+		return ("This is bussiness logic 1");
+	}
+	
+}

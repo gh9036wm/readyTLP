@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserRepository.java&apos; to &apos;first-springboot-project/src/main/java/com.in28minutes.springboot.jpa&apos;&#x0A;- Original project: &apos;first-springboot-project&apos;&#x0A;- Destination element: &apos;first-springboot-project/src/main/java/com.in28minutes.springboot.jpa&apos;&#x0A;- Original element: &apos;com.in28minutes.springboot.jpa.UserRepository.java&apos;" description="Copy compilation unit" destination="/src\/main\/java&lt;com.in28minutes.springboot.jpa" element1="/src\/main\/java&lt;com.in28minutes.springboot.jpa{UserRepository.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1541098567697" units="1" version="1.0"/>
+</session>

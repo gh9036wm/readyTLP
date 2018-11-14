@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;actual&apos; from expression &apos;&quot;{id:1, name:James}&quot;&apos;&#x0A;- Original project: &apos;first-springboot-project&apos;&#x0A;- Variable name: &apos;actual&apos;&#x0A;- Destination method: &apos;com.in28minutes.springboot.controller.SurveyControllerIT.testJsonAssert()&apos;&#x0A;- Variable expression: &apos;&quot;{id:1, name:James}&quot;&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;actual&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src\/test\/java&lt;com.in28minutes.springboot.controller{SurveyControllerIT.java" name="actual" replace="true" selection="1029 20" stamp="1541533457850" version="1.0"/>
+</session>

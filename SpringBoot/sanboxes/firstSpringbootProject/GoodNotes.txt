@@ -1,0 +1,71 @@
+   ---------To declare parent on the top outside the dependencies tag is very important for version inheritance so the rest of 
+   dependencies we do not have
+   to declare version over and over again . it will be inherited from the parent
+    
+    <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.0.RELEASE</version>
+	</parent>
+	-----------------------------------------------------------------------------
+	----------To overdrive java version in pom
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	------------------------------------
+    <dependencies></dependencies>
+
+
+——————————————————To use @service or @component  at the class we create and @Autowired to call
+instead of call like the arrow below
+
+@RestController
+public class WelcomeController {
+	//dependency
+===> 	 private WelcomeSevice welcome = new WelcomeSevice();
+	
+	@RequestMapping ("/welcome")
+	public String welcome() {
+		return welcome.WelcomeMessage();
+	}
+	
+class WelcomeSevice{
+	public String WelcomeMessage() {
+		return "Good Morning RestController Services";
+	}
+}
+new way
+
+	@Autowired
+	 private WelcomeSevice welcome;
+	
+	@RequestMapping ("/welcome")
+	public String welcome() {
+		return welcome.WelcomeMessage();
+	}
+@Component // we can use @Service as well the same
+class WelcomeSevice{
+	public String WelcomeMessage() {
+		return "Good Morning RestController Services";
+	}
+}
+
+
+
+
+——————————————————————————————	
+
+FOR BEAN OR COMPONENT LOCATE IN DIFFERENT PACKAGE, WE SHOULD INCLUDE @COMPONENTSCAN (@ComponentScan ("com.in28minutes")) // IN MAIN APPLICATION SO IT CAN SCAN THE ENTIRE PATH UNDER IN28MINUTE . EX:
+
+@SpringBootApplication
+@ComponentScan ("com.in28minutes")
+public class Application {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx = SpringApplication.run(Application.class, args);
+
+	}
+
+}
+
+	

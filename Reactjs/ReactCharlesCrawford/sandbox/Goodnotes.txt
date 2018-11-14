@@ -1,0 +1,8 @@
+To create react from scratch:
+
+1-npm init
+2-cat package.json ( to look at json file)
+3-npm install --save react ( update json file with react dependency)
+
+https://www.codecademy.com/articles/how-to-create-a-react-app
+

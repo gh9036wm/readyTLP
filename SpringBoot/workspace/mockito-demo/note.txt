@@ -1,0 +1,5 @@
+int result = businessImpl.findTheGreatestFromAllData();
+		assertEquals(15,result);
+after inline ==> 
+
+assertEquals(15, businessImpl.findTheGreatestFromAllData());

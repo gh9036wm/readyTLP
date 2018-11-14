@@ -1,0 +1,21 @@
+to create simple app
+1-sudo npm install -g create-react-app
+2-create-react-app bulletin-board
+
+To install icon 
+npm install —save -react-icons
+
+For react-icons to make sure use the same name with font awesome and the import link should be:
+import {FaWrench} from 'react-icons/fa'
+import {FaTrash} from 'react-icons/fa'
+————————————————————————————
+you can go to e.g. node_moduels/react-icons/fa/index.d.ts and see all the exports to get the right NAME
+
+
+—————————————————————————
+Using ref to get input from user and out put it to other slot
+ref={input => this.new_Text = input}
+save(){
+		alert(this.new_Text.value)
+
+———————————————————————————

@@ -1,0 +1,18 @@
+
+Tip1:  App.js file connect to html file with one section of<!-- REACT COMPONENTS GO HERE -->
+					<div id="react-root"></div>
+					chapter 2-1
+App.js:
+(function() {
+  "use strict";
+
+  var ProductCustomizer = React.createElement(
+    "div",
+    { className: "customizer" },
+    "Product customizer will go here"
+  );
+
+  ReactDOM.render(ProductCustomizer, document.getElementById("react-root"));
+})();
+
+Tip2: CHANGE COLOR OF SHOE :

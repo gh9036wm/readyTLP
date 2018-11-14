@@ -1,0 +1,102 @@
+@Controller: to get it show on page with mapping
+@RequestMapping: to map http with ("/login")
+@ModelMap model; : model.put("name, value) so we can call it in jsp html file: ${value}
+@RequestMapping("/login")
+@RequestParam: 
+example:
+	public String loginMessage(@RequestParam String name, ModelMap model) {
+		model.put("name", name);
+		return "login";==> this is will direct to login.jsp page
+---------------------------------
+with @RequestMapping("/login"). if we do not specify method type, the it will use for every type : GET,POST,PUT...
+@RequestMapping(value ="/login", method= RequestMethod.GET) to specify each type for 
+
+----------------------
+when create class ussualy we instantiate when use it like: LoginService service = new LoginService();
+but because we use Springboot therefore 2 things need to be done:
+1 - I am a bean == @Component (on top of class) OR @Service works the same(double check)
+2 At the place to use that above class we use @Autowired to call it
+
+-----for adding message like ( invalid login) we also use model.put("message", "invalid login") and call from other page
+<Font color="red"> ${message}</font>. NOTE: the model is object from ModelMap model
+
+---------param name pass to modelMap only use to to that specific jsp file . it is no good for the link after that for 
+from that page. To carry it need to use @SessionAttributes("") in that origionnal where param start and the page it is called
+
+------------redirect to other page
+return "redirect:/list-todos";
+
+------Display Todos in a table using JSTL Tags --step14 md
+Add for dependecy:
+<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        
+   and <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> for the page fomat
+   
+ -----------adding bootrap and jquery for style step 15 md
+ 
+ ------Delete:
+ create button with the link href="/delete-todo?id=${todo.id}" then do the logic with todoController
+ 
+ -----USE COMMAND BEAN TO REPLACE @PARAM STRING  desc in order to maintain declaration by adding to many @param.. will see
+ 2 things need to do:
+ 	1- modifying controller 
+ 	2- adding view - spring form tag
+ 	
+ 	MODIFYING CONTROLLER
+ 	BEFORE:
+ 	public String AddTodo( ModelMap model,@RequestParam String desc) {
+		service.addTodo( (String) model.get("name"), desc, new Date(), false);
+	return "redirect:/list-todos";
+	AFTER:
+	public String AddTodo( ModelMap model,Todo todo) {
+		service.addTodo( (String) model.get("name"), todo.getDesc(), new Date(), false);
+	return "redirect:/list-todos";
+	
+	SPRING TAG FORM: STEP 18 
+	  -  <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+	-	<form:form method="post" commandName="todo">
+			<fieldset class="form-group">
+				<form:label path="desc">Description</form:label>
+				<form:input path="desc" type="text" class="form-control" required="required"/>
+			</fieldset>
+		</form:form>
+
+	-	@Size(min = 10, message = "Enter atleast 10 Characters.") // on the variable  declaration page
+		
+	-	@Valid Todo todo, BindingResult result  // on todo controller
+
+		if (result.hasErrors())
+			return "todo";
+		
+	-	<form:errors path="desc" cssClass="text-warning" />// on the todo.jsp page
+	
+	------calenda picker------ step 20
+	<dependency>
+		<groupId>org.webjars</groupId>
+		<artifactId>bootstrap-datepicker</artifactId>
+		<version>1.0.1</version>
+	</dependency>
+	
+	<script
+		src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+
+	<script>
+		$('#targetDate').datepicker({
+			format : 'dd/mm/yyyy'
+		});
+	</script>
+		
+		
+
+		
+
+	
+ 
+ 
+ 
+ 
+ 

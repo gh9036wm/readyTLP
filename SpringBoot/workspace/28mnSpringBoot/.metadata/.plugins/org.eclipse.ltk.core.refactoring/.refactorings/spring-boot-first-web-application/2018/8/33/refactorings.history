@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring-boot-first-web-application/src/main/webapp/WEB-INF/jsp/add-todos.jsp&apos; to &apos;todo.jsp&apos;" description="Rename resource &apos;add-todos.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/jsp/add-todos.jsp" name="todo.jsp" stamp="1534344720585" updateReferences="true"/>
+</session>
