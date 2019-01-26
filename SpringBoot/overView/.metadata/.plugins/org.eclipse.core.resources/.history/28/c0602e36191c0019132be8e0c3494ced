@@ -1,0 +1,55 @@
+package com.in28minutes.spring.web.controller;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.in28minutes.spring.web.model.Todo;
+import com.in28minutes.spring.web.service.TodoService;
+
+@Controller
+@SessionAttributes("nameKey")
+public class TodoController {
+	@Autowired
+	private TodoService todoservice;
+	
+	@RequestMapping(value ="/list-todos", method=RequestMethod.GET)
+	public String showTodoList(ModelMap model) {
+	String name = (String) model.get("nameKey");	
+	model.put("todos",todoservice.retrieveTodos(name));
+	return "list-todos";
+		}
+	
+	// the add-todo GET method to show the todo.jsp  page so user can input something
+	@RequestMapping(value ="/add-todo", method=RequestMethod.GET)
+	public String showAddTodo(ModelMap model) {
+		model.addAttribute("todow",new Todo(0,(String) model.get("nameKey"),"Default Desc ", new Date(), false));
+		return "todo";
+		}
+	
+	// This add-todo with POST method to take the input from form and create param for variabe so we can use
+	@RequestMapping(value ="/add-todo", method=RequestMethod.POST)
+	public String AddTodo(ModelMap model,@Valid Todo todo, BindingResult result) {
+		if(result.hasErrors()) {
+			return "todo";
+		}
+		
+		todoservice.addTodo((String) model.get("nameKey"), todo.getDesc(), new Date(), false);
+		return "redirect:/list-todos";
+		}
+	@RequestMapping(value ="/delete-todo", method=RequestMethod.GET)
+	public String DeleteTodo(@RequestParam int id) {
+		todoservice.deleteTodo(id);
+		return "redirect:/list-todos";
+		}
+	}

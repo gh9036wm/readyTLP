@@ -1,0 +1,14 @@
+package com.in28minutes.spring.web;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootFirstWebApp {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootFirstWebApp.class, args);
+	}
+
+}
+

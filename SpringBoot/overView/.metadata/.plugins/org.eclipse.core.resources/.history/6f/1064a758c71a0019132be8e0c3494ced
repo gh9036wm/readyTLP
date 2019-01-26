@@ -1,0 +1,11 @@
+package com.in28minutes.spring.web.service;
+
+public class loginService {
+	
+	public boolean loginValidate(String userId, String userPass) {
+		if(userId =="in28Minutes" && userPass == "dummy") {
+			return true;
+		}else {
+			return false;}
+		}
+	}

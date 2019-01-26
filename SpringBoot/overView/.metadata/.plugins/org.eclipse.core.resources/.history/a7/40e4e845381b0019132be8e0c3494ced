@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>Welcome page</title>
+</head>
+<body>
+   <p>Welcome ${nameKey} !! <a href="">Click here to manage todo</a></p>
+   
+</body>
+</html>

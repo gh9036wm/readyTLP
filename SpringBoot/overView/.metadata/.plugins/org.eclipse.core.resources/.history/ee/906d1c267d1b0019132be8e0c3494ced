@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>First Web Application</title>
+</head>
+<body>
+   <p>Here is the List of ${nameKey}  Todos :</p>
+   ${listKey}
+ <br>
+ <a href="/add-todo">Add new Todo</a>
+ 
+   
+</body>
+</html>

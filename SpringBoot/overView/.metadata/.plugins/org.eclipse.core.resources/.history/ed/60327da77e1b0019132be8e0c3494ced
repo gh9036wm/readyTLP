@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Todos for ${nameKey}</title>
+</head>
+
+<body>
+   <h1>Your Todos</h1>
+   <table>
+   <caption>Your todos are</caption>
+   
+   
+   
+   </table>
+   <p>Here is the List of ${nameKey}  Todos :</p>
+   ${listKey}
+ <br>
+ <a href="/add-todo">Add new Todo</a>
+ 
+   
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.in28minutes.spring.web.model;
+
+public class Todo {
+
+}

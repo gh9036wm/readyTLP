@@ -1,0 +1,29 @@
+package com.in28minutes.spring.web.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.in28minutes.spring.web.model.Todo;
+import com.in28minutes.spring.web.service.TodoService;
+
+@Controller
+@SessionAttributes("name")
+public class TodoController {
+	@Autowired
+	private TodoService todoservice;
+	
+	@RequestMapping(value ="/list-todos", method=RequestMethod.GET)
+	public String showTodoList(ModelMap model) {
+		String name = (String) model.get("name");
+	List<Todo> listTodos =	todoservice.retrieveTodos(name);
+	model.put("listKey",listTodos);
+	model.put("name", name);
+		return "list-todos";
+		}
+	}

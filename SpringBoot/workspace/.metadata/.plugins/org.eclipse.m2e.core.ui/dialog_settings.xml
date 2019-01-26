@@ -33,6 +33,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/jamestran/Desktop/ReadyTLP/SpringBoot/workspace/JPASpring10-6/jpa-in-10-steps"/>
 			<item value="/Users/jamestran/Desktop/ReadyTLP/SpringBoot/workspace/first-project"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -57,6 +58,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/Users/jamestran/Desktop/ReadyTLP/SpringBoot/workspace/JPASpring10-6"/>
+			<item value="/Users/jamestran/Desktop/ReadyTLP/SpringBoot/workspace/JPASpring10-6/jpa-in-10-steps"/>
 			<item value="/Users/jamestran/Desktop/ReadyTLP/SpringBoot/workspace/SpringBootAdvC-5/first-springboot-project"/>
 			<item value="/Users/jamestran/Desktop/ReadyTLP/SpringBoot/workspace/first-project"/>
 		</list>

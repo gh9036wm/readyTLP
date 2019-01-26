@@ -44,6 +44,7 @@ render() {
                 hobbies= {profile.hobbies}
             />
     }) 
+    
     return (
       <div>
      {profiles}

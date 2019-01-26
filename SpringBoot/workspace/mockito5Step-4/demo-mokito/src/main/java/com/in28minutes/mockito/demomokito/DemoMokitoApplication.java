@@ -1,0 +1,12 @@
+package com.in28minutes.mockito.demomokito;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoMokitoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoMokitoApplication.class, args);
+	}
+}
